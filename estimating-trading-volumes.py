@@ -233,25 +233,25 @@ if __name__ == "__main__":
     exchange_info = get_exchange_info_symbols()
 
     #symbols = extract_symbols_ticker(exchange_info)
-    # save_json(symbols, "symbols.json")
+    # save_json(symbols, "ressources/symbols.json")
 
     # print("🔄 Building the conversion graph...")
     # graph = build_graph(exchange_info)
-    # save_json(graph, "graph.json")
+    # save_json(graph, "ressources/graph.json")
     
     # print("🔄 Loading the graph...")
-    # graph = load_graph("graph.json")
+    # graph = load_graph("ressources/graph.json")
 
     # print("🔄 Calculating quote USD price from the graph...")
     # quotes_usdt_prices = get_usdt_price_for_assets(symbols.values(), graph)
-    # save_json(quotes_usdt_prices, "quotes_usdt_prices.json")
+    # save_json(quotes_usdt_prices, "ressources/quotes_usdt_prices.json")
 
     # print("🔄 Calculating symbol volumes in USD...")
     # symbol_volumes = get_symbol_volume(symbols, quotes_usdt_prices)
-    # save_json(symbol_volumes, "symbol_volumes.json")
+    # save_json(symbol_volumes, "ressources/symbol_volumes.json")
 
     # print("🔄 Saving results to CSV...")
-    # save_csv(symbol_volumes, "trading_volumes.csv")
+    # save_csv(symbol_volumes, "ressources/trading_volumes.csv")
 
     # print("✅ Process complete!")
 
