@@ -104,7 +104,6 @@ def build_graph(full_symbols_list):
             for s in full_symbols_list
         }
         
-
         for future in tqdm(concurrent.futures.as_completed(future_to_symbol), total=len(full_symbols_list), desc="Building graph"):
             symbol_dict = future_to_symbol[future]
             base = symbol_dict["baseAsset"]
@@ -232,28 +231,29 @@ def get_symbol_volume(symbols, quotes_usdt_prices):
 if __name__ == "__main__":
     print("🔄 Fetching symbols...")
     exchange_info = get_exchange_info_symbols()
-    symbols = extract_symbols_ticker(exchange_info)
+
+    #symbols = extract_symbols_ticker(exchange_info)
     # save_json(symbols, "symbols.json")
 
     # print("🔄 Building the conversion graph...")
     # graph = build_graph(exchange_info)
     # save_json(graph, "graph.json")
     
-    print("🔄 Loading the graph...")
-    graph = load_graph("graph.json")
+    # print("🔄 Loading the graph...")
+    # graph = load_graph("graph.json")
 
-    print("🔄 Calculating quote USD price from the graph...")
-    quotes_usdt_prices = get_usdt_price_for_assets(symbols.values(), graph)
-    save_json(quotes_usdt_prices, "quotes_usdt_prices.json")
+    # print("🔄 Calculating quote USD price from the graph...")
+    # quotes_usdt_prices = get_usdt_price_for_assets(symbols.values(), graph)
+    # save_json(quotes_usdt_prices, "quotes_usdt_prices.json")
 
-    print("🔄 Calculating symbol volumes in USD...")
-    symbol_volumes = get_symbol_volume(symbols, quotes_usdt_prices)
-    save_json(symbol_volumes, "symbol_volumes.json")
+    # print("🔄 Calculating symbol volumes in USD...")
+    # symbol_volumes = get_symbol_volume(symbols, quotes_usdt_prices)
+    # save_json(symbol_volumes, "symbol_volumes.json")
 
-    print("🔄 Saving results to CSV...")
-    save_csv(symbol_volumes, "trading_volumes.csv")
+    # print("🔄 Saving results to CSV...")
+    # save_csv(symbol_volumes, "trading_volumes.csv")
 
-    print("✅ Process complete!")
+    # print("✅ Process complete!")
 
 
 
