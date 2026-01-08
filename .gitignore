@@ -1,3 +1,4 @@
 binance/resources/*
 coinbase/resources/*
 xenv
+.DS_Store
